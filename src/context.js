@@ -13,7 +13,7 @@ const AppProvider = ({ children }) => {
     setLoading(true);
     try {
       const response = await fetch(`${url}${searchTerm}`);
-      const data = response.json();
+      const data = await response.json();
       const { drinks } = data;
       if (drinks) {
         const newCocktails = drinks.map((item) => {
